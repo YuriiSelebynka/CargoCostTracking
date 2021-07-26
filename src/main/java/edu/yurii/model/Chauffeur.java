@@ -2,9 +2,9 @@ package edu.yurii.model;
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
-  @class  Route
+  @class  Chauffeur
   @version  1.0.0 
-  @since 26.07.21 - 14.38
+  @since 26.07.21 - 17.24
 */
 
 import lombok.AllArgsConstructor;
@@ -17,28 +17,27 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Route {
+public class Chauffeur {
     @Id
     private String id;
-    private String name;
-    private double distance;
-    private double daysInRoute;
-    private double payment;
+    private String surname;
+    private String firstname;
+    private String patronymic;
+    private double experience;
 
-    public Route(String name, double distance
-            , double daysInRoute, double payment) {
-        this.name = name;
-        this.distance = distance;
-        this.daysInRoute = daysInRoute;
-        this.payment = payment;
+    public Chauffeur(String surname, String firstname, String patronymic, double experience) {
+        this.surname = surname;
+        this.firstname = firstname;
+        this.patronymic = patronymic;
+        this.experience = experience;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Route route = (Route) o;
-        return getId().equals(route.getId());
+        Chauffeur chauffeur = (Chauffeur) o;
+        return getId().equals(chauffeur.getId());
     }
 
     @Override

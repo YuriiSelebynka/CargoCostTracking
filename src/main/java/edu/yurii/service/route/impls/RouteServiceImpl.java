@@ -26,11 +26,11 @@ public class RouteServiceImpl implements IRouteService {
     @Autowired
     RouteMongoRepository routeMongoRepository;
 
-    @PostConstruct
-    void init(){
-        List<Route> routeList = fakeRouteRepository.getAll();
-        routeMongoRepository.saveAll(routeList);
-    }
+//    @PostConstruct
+//    void init(){
+//        List<Route> routeList = fakeRouteRepository.getAll();
+//        routeMongoRepository.saveAll(routeList);
+//    }
 
     @Override
     public Route create(Route route) {
