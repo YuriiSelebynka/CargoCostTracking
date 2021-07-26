@@ -8,35 +8,41 @@ package edu.yurii.service.route.impls;
 */
 
 import edu.yurii.model.Route;
+import edu.yurii.repository.FakeRouteRepository;
 import edu.yurii.service.route.interfaces.IRouteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class RouteServiceImpl implements IRouteService {
+
+    @Autowired
+    FakeRouteRepository fakeRouteRepository;
+
     @Override
     public Route create(Route route) {
-        return null;
+        return fakeRouteRepository.create(route);
     }
 
     @Override
     public Route get(String id) {
-        return null;
+        return fakeRouteRepository.get(id);
     }
 
     @Override
     public Route update(Route route) {
-        return null;
+        return fakeRouteRepository.update(route);
     }
 
     @Override
     public Route delete(String id) {
-        return null;
+        return fakeRouteRepository.delete(id);
     }
 
     @Override
     public List<Route> getAll() {
-        return null;
+        return fakeRouteRepository.getAll();
     }
 }
