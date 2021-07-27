@@ -21,8 +21,8 @@
             <th>Patronymic</th>
             <th>Experience</th>
 <#--            <th>Updated</th>-->
-<#--            <th>Delete</th>-->
-<#--            <th>Edit</th>-->
+            <th>Delete</th>
+            <th>Edit</th>
 
         </tr>
 
@@ -33,9 +33,9 @@
                 <td>${chauffeur.firstname}</td>
                 <td>${chauffeur.patronymic}</td>
                 <td>${chauffeur.experience}</td>
-                <#--                -->
-                <#--                <td>  <a href="/gui/item/delete/${item.id}" > <input type="button" class="btn btn-danger" value="Del">  </a>  </td>-->
-                <#--                <td>  <a href="/gui/item/update/${item.id}" > <input type="button" class="btn btn-dark" value="Edit">  </a>  </td>-->
+
+                <td>  <a href="/gui/chauffeur/delete/${chauffeur.id}" > <input type="button" class="btn btn-danger" value="Del">  </a>  </td>
+                <td>  <a href="/gui/chauffeur/update/${chauffeur.id}" > <input type="button" class="btn btn-dark" value="Edit">  </a>  </td>
 
             </tr>
         </#list>
@@ -44,7 +44,7 @@
 
 </div>
 
-<#--<a href="/gui/chauffeur/create" > <input type="button" class="btn btn-success" value="Create"></a>-->
+<a href="/gui/chauffeur/create" > <input type="button" class="btn btn-success" value="Create"></a>
 
 <br>
 <br>
