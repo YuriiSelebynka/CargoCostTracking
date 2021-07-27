@@ -39,7 +39,7 @@ public class FakeFinishedWorkRepository {
             )
     );
 
-    private List<Chauffeur> list = new ArrayList<>(
+    private List<Chauffeur> chauffeurList = new ArrayList<>(
             Arrays.asList(
                     new Chauffeur("4", "Washington", "George", "First", 12),
                     new Chauffeur("5", "Adams", "John", "Second", 9),
@@ -50,11 +50,11 @@ public class FakeFinishedWorkRepository {
     );
 
     private List<FinishedWork> finishedWorkList = new ArrayList<>(
-            Arrays.asList(
-                    new FinishedWork("9", routeList.get(0), list.get(4), LocalDate.now(), LocalDate.now(),120)
-//                    new FinishedWork("10", routeList.get(3), list.get(8), LocalDate.now(), LocalDate.now(),140),
-//                    new FinishedWork("11", routeList.get(1), list.get(7), LocalDate.now(), LocalDate.now(),90),
-//                    new FinishedWork("12", routeList.get(2), list.get(5), LocalDate.now(), LocalDate.now(),120)
+            Arrays.asList(                                 //wants only chauffeur with id 4
+                    new FinishedWork("9", routeList.get(0), chauffeurList.get(4), LocalDate.now(), LocalDate.now(),120),
+                    new FinishedWork("10", routeList.get(1), chauffeurList.get(4), LocalDate.now(), LocalDate.now(),140),
+                    new FinishedWork("11", routeList.get(2), chauffeurList.get(4), LocalDate.now(), LocalDate.now(),120),
+                    new FinishedWork("12", routeList.get(3), chauffeurList.get(4), LocalDate.now(), LocalDate.now(),90)
             )
     );
 

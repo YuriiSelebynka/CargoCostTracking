@@ -14,6 +14,7 @@ import edu.yurii.service.finishedwork.interfaces.IFinishedWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
@@ -27,9 +28,9 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
 
 //    @PostConstruct
 //    void init() {
-//        List<FinishedWork> list = fakeFinishedWorkRepository.getAll();
-//        System.out.println(list);
-//        finishedWorkMongoRepository.saveAll(list);
+//        List<FinishedWork> finishedWorkList = fakeFinishedWorkRepository.getAll();
+//        System.out.println(finishedWorkList);
+//        finishedWorkMongoRepository.saveAll(finishedWorkList);
 //    }
 
     @Override
