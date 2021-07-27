@@ -35,22 +35,25 @@ public class ChauffeurServiceImpl implements IChauffeurService {
 
     @Override
     public Chauffeur create(Chauffeur chauffeur) {
-        return null;
+        return chauffeurMongoRepository.save(chauffeur);
     }
 
     @Override
     public Chauffeur get(String id) {
-        return null;
+        return chauffeurMongoRepository.findById(id).get();
     }
 
     @Override
     public Chauffeur update(Chauffeur chauffeur) {
-        return null;
+        Chauffeur chauffeurToUpdate = this.get(chauffeur.getId());
+        return chauffeurMongoRepository.save(chauffeur);
     }
 
     @Override
     public Chauffeur delete(String id) {
-        return null;
+        Chauffeur chauffeur = this.get(id);
+        chauffeurMongoRepository.deleteById(id);
+        return chauffeur;
     }
 
     @Override

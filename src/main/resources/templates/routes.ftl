@@ -41,5 +41,10 @@
 </div>
 
 <td> <a href="/gui/route/create"> <input type="button" class="btn btn-success" value="Create"> </a> </td>
+
+<br>
+<br>
+<td> <a href="/"> <input type="button" class="btn btn-success" value="Main"> </a> </td>
+
 </body>
 </html>

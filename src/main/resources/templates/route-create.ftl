@@ -24,7 +24,9 @@
             </form>
         </fieldset>
     </div>
-
+    <br>
+    <br>
+    <td> <a href="/"> <input type="button" class="btn btn-success" value="Main"> </a> </td>
 </head>
 <body>
 

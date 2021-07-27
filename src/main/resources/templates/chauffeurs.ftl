@@ -46,6 +46,9 @@
 
 <#--<a href="/gui/chauffeur/create" > <input type="button" class="btn btn-success" value="Create"></a>-->
 
+<br>
+<br>
+<td> <a href="/"> <input type="button" class="btn btn-success" value="Main"> </a> </td>
 
 </body>
 </html>
