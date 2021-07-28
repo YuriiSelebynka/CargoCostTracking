@@ -60,6 +60,7 @@ public class FinishedWorkGuiController {
         finishedWork.setChauffeur(form.getChauffeur());
         finishedWork.setDepartureDate(form.getDepartureDate());
         finishedWork.setReturnDate(form.getReturnDate());
+        finishedWork.setFee(finishedWork.getFee());
         finishedWorkService.create(finishedWork);
 
         return "redirect:/gui/finishedwork/all";
@@ -73,8 +74,11 @@ public class FinishedWorkGuiController {
         finishedWorkToUpdate.setId(finishedWork.getId());
         finishedWorkToUpdate.setRoute(finishedWork.getRoute());
         finishedWorkToUpdate.setChauffeur(finishedWork.getChauffeur());
+
         finishedWorkToUpdate.setDepartureDate(finishedWork.getDepartureDate());
         finishedWorkToUpdate.setReturnDate(finishedWork.getReturnDate());
+
+        finishedWorkToUpdate.setFee(finishedWork.getFee());
 
         model.addAttribute("form", finishedWorkToUpdate);
         return "finishedwork-update";
@@ -88,6 +92,7 @@ public class FinishedWorkGuiController {
         finishedWork.setChauffeur(form.getChauffeur());
         finishedWork.setDepartureDate(form.getDepartureDate());
         finishedWork.setReturnDate(form.getReturnDate());
+        finishedWork.setFee(form.getFee());
         finishedWorkService.update(finishedWork);
 
         return "redirect:/gui/finishedwork/all";

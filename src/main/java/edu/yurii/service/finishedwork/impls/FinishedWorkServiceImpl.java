@@ -8,56 +8,61 @@ package edu.yurii.service.finishedwork.impls;
 */
 
 import edu.yurii.model.FinishedWork;
-import edu.yurii.repository.FakeFinishedWorkRepository;
+import edu.yurii.repository.FakeRepository;
 import edu.yurii.repository.FinishedWorkMongoRepository;
 import edu.yurii.service.finishedwork.interfaces.IFinishedWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class FinishedWorkServiceImpl implements IFinishedWorkService {
 
     @Autowired
-    FakeFinishedWorkRepository fakeFinishedWorkRepository;
+    FakeRepository fakeRepository;
 
     @Autowired
     FinishedWorkMongoRepository finishedWorkMongoRepository;
 
 //    @PostConstruct
 //    void init() {
-//        List<FinishedWork> finishedWorkList = fakeFinishedWorkRepository.getAll();
+//        List<FinishedWork> finishedWorkList = fakeRepository.getAll();
 //        System.out.println(finishedWorkList);
 //        finishedWorkMongoRepository.saveAll(finishedWorkList);
 //    }
 
     @Override
     public FinishedWork create(FinishedWork finishedWork) {
+        finishedWork.setDepartureDate(LocalDate.now());
+        finishedWork.setReturnDate(LocalDate.now());
         return finishedWorkMongoRepository.save(finishedWork);
     }
 
     @Override
     public FinishedWork get(String id) {
-        return finishedWorkMongoRepository.findById(id).get();
+        return finishedWorkMongoRepository.findById(id).orElse(null);
     }
 
     @Override
     public FinishedWork update(FinishedWork finishedWork) {
         FinishedWork finishedWorkToUpdate = this.get(finishedWork.getId());
+
         return finishedWorkMongoRepository.save(finishedWork);
     }
 
     @Override
     public FinishedWork delete(String id) {
         FinishedWork finishedWork = this.get(id);
-        finishedWorkMongoRepository.deleteById(id);
+        finishedWorkMongoRepository.deleteById(finishedWork.getId());
         return finishedWork;
     }
 
     @Override
     public List<FinishedWork> getAll() {
-        return fakeFinishedWorkRepository.getAll();
+        //return fakeRepository.getAll();
+        return finishedWorkMongoRepository.findAll();
     }
 }

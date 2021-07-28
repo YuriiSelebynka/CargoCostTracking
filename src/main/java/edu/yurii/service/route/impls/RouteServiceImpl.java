@@ -8,7 +8,8 @@ package edu.yurii.service.route.impls;
 */
 
 import edu.yurii.model.Route;
-import edu.yurii.repository.FakeRouteRepository;
+import edu.yurii.repository.FakeRepository;
+//import edu.yurii.repository.FakeRouteRepository;
 import edu.yurii.repository.RouteMongoRepository;
 import edu.yurii.service.route.interfaces.IRouteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +22,14 @@ import java.util.List;
 public class RouteServiceImpl implements IRouteService {
 
     @Autowired
-    FakeRouteRepository fakeRouteRepository;
+    FakeRepository fakeRepository;
 
     @Autowired
     RouteMongoRepository routeMongoRepository;
 
 //    @PostConstruct
 //    void init(){
-//        List<Route> routeList = fakeRouteRepository.getAll();
+//        List<Route> routeList = fakeRepository.getAll();
 //        routeMongoRepository.saveAll(routeList);
 //    }
 
@@ -39,19 +40,19 @@ public class RouteServiceImpl implements IRouteService {
 
     @Override
     public Route get(String id) {
-        return routeMongoRepository.findById(id).get();
+        return routeMongoRepository.findById(id).orElse(null);
     }
 
     @Override
     public Route update(Route route) {
-        Route routeToUpdate = this.get(route.getId());
+        //Route routeToUpdate = this.get(route.getId());
         return routeMongoRepository.save(route);
     }
 
     @Override
     public Route delete(String id) {
         Route route = this.get(id);
-        routeMongoRepository.deleteById(id);
+        routeMongoRepository.deleteById(route.getId());
         return route;
     }
 

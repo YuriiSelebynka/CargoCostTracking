@@ -9,7 +9,8 @@ package edu.yurii.service.chauffeur.impls;
 
 import edu.yurii.model.Chauffeur;
 import edu.yurii.repository.ChauffeurMongoRepository;
-import edu.yurii.repository.FakeChauffeurRepository;
+//import edu.yurii.repository.FakeChauffeurRepository;
+import edu.yurii.repository.FakeRepository;
 import edu.yurii.service.chauffeur.interfaces.IChauffeurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ import java.util.List;
 public class ChauffeurServiceImpl implements IChauffeurService {
 
     @Autowired
-    FakeChauffeurRepository fakeChauffeurRepository;
+    FakeRepository fakeRepository;
 
     @Autowired
     ChauffeurMongoRepository chauffeurMongoRepository;
@@ -40,19 +41,19 @@ public class ChauffeurServiceImpl implements IChauffeurService {
 
     @Override
     public Chauffeur get(String id) {
-        return chauffeurMongoRepository.findById(id).get();
+        return chauffeurMongoRepository.findById(id).orElse(null);
     }
 
     @Override
     public Chauffeur update(Chauffeur chauffeur) {
-        Chauffeur chauffeurToUpdate = this.get(chauffeur.getId());
+        //Chauffeur chauffeurToUpdate = this.get(chauffeur.getId());
         return chauffeurMongoRepository.save(chauffeur);
     }
 
     @Override
     public Chauffeur delete(String id) {
         Chauffeur chauffeur = this.get(id);
-        chauffeurMongoRepository.deleteById(id);
+        chauffeurMongoRepository.deleteById(chauffeur.getId());
         return chauffeur;
     }
 

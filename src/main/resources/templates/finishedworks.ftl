@@ -22,8 +22,8 @@
             <th>Return Date</th>
             <th>Fee</th>
 
-<#--            <th>Delete</th>-->
-<#--            <th>Edit</th>-->
+            <th>Delete</th>
+            <th>Edit</th>
 
         </tr>
 
@@ -36,8 +36,8 @@
                 <td>${finishedwork.returnDate}</td>
                 <td>${finishedwork.fee}</td>
 
-<#--                <td>  <a href="/gui/finishedwork/delete/${finishedwork.id}" > <input type="button" class="btn btn-danger" value="Del">  </a>  </td>-->
-<#--                <td>  <a href="/gui/finishedwork/update/${finishedwork.id}" > <input type="button" class="btn btn-dark" value="Edit">  </a>  </td>-->
+                <td>  <a href="/gui/finishedwork/delete/${finishedwork.id}" > <input type="button" class="btn btn-danger" value="Del">  </a>  </td>
+                <td>  <a href="/gui/finishedwork/update/${finishedwork.id}" > <input type="button" class="btn btn-dark" value="Edit">  </a>  </td>
 
             </tr>
         </#list>
@@ -46,7 +46,7 @@
 
 </div>
 
-<#--<a href="/gui/finishedwork/create" > <input type="button" class="btn btn-success" value="Create"></a>-->
+<a href="/gui/finishedwork/create" > <input type="button" class="btn btn-success" value="Create"></a>
 
 <br>
 <br>
