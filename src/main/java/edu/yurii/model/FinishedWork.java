@@ -34,6 +34,8 @@ public class FinishedWork {
     private LocalDate returnDate;
     private double fee;
 
+    public Chauffeur emptyChauffeur = new Chauffeur(null, "null", "null", "null", 0);
+
     public FinishedWork(Route route, Chauffeur chauffeur, Chauffeur coChauffeur, double fee) {
         this.route = route;
         this.chauffeur = chauffeur;
@@ -67,7 +69,7 @@ public class FinishedWork {
 
     public Chauffeur getCoChauffeur() {
         if (coChauffeur == null) {
-            return null;//
+            return emptyChauffeur;
         } else
         return coChauffeur;
     }

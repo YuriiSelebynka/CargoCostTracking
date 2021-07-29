@@ -33,6 +33,8 @@ public class Chauffeur {
         this.experience = experience;
     }
 
+
+
     public String getId() {
         return id;
     }
@@ -43,14 +45,16 @@ public class Chauffeur {
 
     public String getSurname() {
         if ("@null".equals(surname)) {
-            return "";
+            //return "";
+            return null;
         } else
         return surname;
     }
 //"@null".equals(surname)
     public void setSurname(String surname) {
         if ("@null".equals(surname)) {
-            this.surname = getSurname();
+            //this.surname = getSurname();
+            this.surname = null;
         } else
         this.surname = surname;
     }
