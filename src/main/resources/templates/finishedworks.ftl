@@ -32,12 +32,16 @@
             <tr>
                 <td>${finishedwork.id}</td>
                 <td>${finishedwork.route.name}</td>
-                <td>${finishedwork.chauffeur.surname}</td>
-                <td>${finishedwork.coChauffeur.surname}</td>
+                <td>${finishedwork.chauffeur.getSurname()}</td>
+                <td>${finishedwork.coChauffeur.getSurname()}</td>
+<#--                <td #if finishedwork.chauffeur.getSurname() != null??>${finishedwork.coChauffeur.getSurname()}><#else>null</#if></td>-->
 
+<#--                <td><#if finishedwork.chauffeur.getSurname(null)>null<#else>${finishedwork.coChauffeur.getSurname()}</#if></td>-->
 
 <#--                <td  finishedwork.coChauffeur.surname!=null >${finishedwork.coChauffeur.surname }</td>-->
 <#--                <td  finishedwork.coChauffeur.surname=null > $null </td>-->
+
+<#--                <#if myOptionalVar??>when-present<#else>when-missing</#if>-->
 
 
 <#--                <td>-->

@@ -42,10 +42,16 @@ public class Chauffeur {
     }
 
     public String getSurname() {
+        if ("@null".equals(surname)) {
+            return "";
+        } else
         return surname;
     }
-
+//"@null".equals(surname)
     public void setSurname(String surname) {
+        if ("@null".equals(surname)) {
+            this.surname = getSurname();
+        } else
         this.surname = surname;
     }
 

@@ -27,7 +27,7 @@ public class FinishedWorkUpdateForm {
     private Chauffeur chauffeur;
     //@Value("${coChauffeur:#{null}}")
     @Nullable
-    private Chauffeur coChauffeur;
+    private Chauffeur coChauffeur = null;
     private LocalDate departureDate;
     private LocalDate returnDate;
     private double fee;
