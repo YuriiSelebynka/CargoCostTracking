@@ -22,8 +22,8 @@
 <#--                <br>-->
 <#--                Return date:<@spring.formInput "form.returnDate.now" "" "text"/>-->
 <#--                <br>-->
-                Fee:<@spring.formInput "form.fee" "" "text"/>
-                <br>
+<#--                Fee:<@spring.formInput "form.fee" "" "text"/>-->
+<#--                <br>-->
 
                 <input type="submit" value="Create"/>
             </form>
