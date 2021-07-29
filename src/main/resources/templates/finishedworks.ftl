@@ -34,6 +34,20 @@
                 <td>${finishedwork.route.name}</td>
                 <td>${finishedwork.chauffeur.surname}</td>
                 <td>${finishedwork.coChauffeur.surname}</td>
+
+
+<#--                <td  finishedwork.coChauffeur.surname!=null >${finishedwork.coChauffeur.surname }</td>-->
+<#--                <td  finishedwork.coChauffeur.surname=null > $null </td>-->
+
+
+<#--                <td>-->
+<#--                    {}-->
+<#--                    ${ % if finishedwork.coChauffeur.surname != null % finishedwork.coChauffeur.surname}-->
+<#--                    {%if finishedwork.coChauffeur == null %} null-->
+<#--                </td>-->
+
+
+
                 <td>${finishedwork.departureDate}</td>
                 <td>${finishedwork.returnDate}</td>
                 <td>${finishedwork.fee}</td>

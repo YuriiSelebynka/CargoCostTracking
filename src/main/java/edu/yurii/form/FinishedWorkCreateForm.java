@@ -27,7 +27,7 @@ public class FinishedWorkCreateForm {
     //@Value("${coChauffeur:#{null}}")
     //@Value("${coChauffeur:0}")
     @Nullable
-    private Chauffeur coChauffeur;
+    private Chauffeur coChauffeur = null;
     private LocalDate departureDate;
     private LocalDate returnDate;
     private double fee;
