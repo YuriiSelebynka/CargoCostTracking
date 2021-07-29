@@ -19,6 +19,8 @@
             <br>
             Chauffeur:<@spring.formInput "form.chauffeur" "" "text"/>
             <br>
+            CoChauffeur:<@spring.formInput "form.coChauffeur" "" "text"/>
+            <br>
             Departure date:<@spring.formInput "form.departureDate" "" "text"/>
             <br>
             Return date:<@spring.formInput "form.returnDate" "" "text"/>

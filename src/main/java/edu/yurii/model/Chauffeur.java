@@ -19,6 +19,7 @@ import java.util.Objects;
 @AllArgsConstructor
 public class Chauffeur {
     @Id
+
     private String id;
     private String surname;
     private String firstname;

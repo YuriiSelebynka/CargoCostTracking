@@ -52,10 +52,10 @@ public class FakeRepository {
 
     private List<FinishedWork> finishedWorkList = new LinkedList<>(
             Arrays.asList(                                 //wants only chauffeur with id 8, but written 4!
-                    new FinishedWork("9", routeList.get(0), chauffeurList.get(3), date, date,120),
-                    new FinishedWork("10", routeList.get(1), chauffeurList.get(3), date, date,140),
-                    new FinishedWork("11", routeList.get(2), chauffeurList.get(4), date, date,120),
-                    new FinishedWork("12", routeList.get(3), chauffeurList.get(0), date, date,90)
+                    new FinishedWork("9", routeList.get(0), chauffeurList.get(3), chauffeurList.get(4), date, date,120),
+                    new FinishedWork("10", routeList.get(1), chauffeurList.get(3), chauffeurList.get(4), date, date,140),
+                    new FinishedWork("11", routeList.get(2), chauffeurList.get(4), chauffeurList.get(3), date, date,120),
+                    new FinishedWork("12", routeList.get(3), chauffeurList.get(0), chauffeurList.get(3), date, date,90)
             )
     );
 

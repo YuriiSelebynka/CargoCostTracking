@@ -18,6 +18,7 @@
             <th>ID</th>
             <th>Route</th>
             <th>Chauffeur</th>
+            <th>CoChauffeur</th>
             <th>Departure Date</th>
             <th>Return Date</th>
             <th>Fee</th>
@@ -32,6 +33,7 @@
                 <td>${finishedwork.id}</td>
                 <td>${finishedwork.route.name}</td>
                 <td>${finishedwork.chauffeur.surname}</td>
+                <td>${finishedwork.coChauffeur.surname}</td>
                 <td>${finishedwork.departureDate}</td>
                 <td>${finishedwork.returnDate}</td>
                 <td>${finishedwork.fee}</td>

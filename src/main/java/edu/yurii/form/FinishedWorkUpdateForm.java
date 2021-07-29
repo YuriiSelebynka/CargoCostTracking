@@ -12,6 +12,9 @@ import edu.yurii.model.Route;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.bind.DefaultValue;
+import org.springframework.lang.Nullable;
 
 import java.time.LocalDate;
 
@@ -22,6 +25,9 @@ public class FinishedWorkUpdateForm {
     private String id;
     private Route route;
     private Chauffeur chauffeur;
+    //@Value("${coChauffeur:#{null}}")
+    @Nullable
+    private Chauffeur coChauffeur;
     private LocalDate departureDate;
     private LocalDate returnDate;
     private double fee;
