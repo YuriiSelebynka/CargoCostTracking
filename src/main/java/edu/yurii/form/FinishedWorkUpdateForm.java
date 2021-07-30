@@ -17,6 +17,7 @@ import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.lang.Nullable;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -28,7 +29,7 @@ public class FinishedWorkUpdateForm {
     //@Value("${coChauffeur:#{null}}")
     @Nullable
     private Chauffeur coChauffeur = null;
-    private LocalDate departureDate;
-    private LocalDate returnDate;
+    private LocalDateTime departureDate;
+    private LocalDateTime returnDate;
     private double fee;
 }

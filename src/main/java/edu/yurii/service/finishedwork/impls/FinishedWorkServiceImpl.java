@@ -37,8 +37,8 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
 
     @Override
     public FinishedWork create(FinishedWork finishedWork) {
-        finishedWork.setDepartureDate(LocalDate.now());
-        finishedWork.setReturnDate(LocalDate.now());
+        finishedWork.setDepartureDate(LocalDateTime.now());
+        finishedWork.setReturnDate(LocalDateTime.now());
         return finishedWorkMongoRepository.save(finishedWork);
     }
 
@@ -51,9 +51,9 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
     public FinishedWork update(FinishedWork finishedWork) {
         FinishedWork finishedWorkToUpdate = this.get(finishedWork.getId());
 
-        LocalDate departure = finishedWorkToUpdate.getDepartureDate();
+        LocalDateTime departure = finishedWorkToUpdate.getDepartureDate();
         finishedWork.setDepartureDate(departure);
-        finishedWork.setReturnDate(LocalDate.now());
+        finishedWork.setReturnDate(LocalDateTime.now());
 
         return finishedWorkMongoRepository.save(finishedWork);
     }

@@ -15,6 +15,7 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Data
@@ -30,8 +31,8 @@ public class FinishedWork {
 
     @Nullable
     private Chauffeur coChauffeur;
-    private LocalDate departureDate;
-    private LocalDate returnDate;
+    private LocalDateTime departureDate;
+    private LocalDateTime returnDate;
     private double fee;
 
     public Chauffeur emptyChauffeur = new Chauffeur(null, "null"
@@ -89,7 +90,7 @@ public class FinishedWork {
 //        return departureDate;
 //    }
 //
-//    public void setDepartureDate(LocalDate departureDate) {
+//    public void setDepartureDate(LocalDateTime departureDate) {
 //        this.departureDate = departureDate;
 //    }
 //
@@ -97,7 +98,7 @@ public class FinishedWork {
 //        return returnDate;
 //    }
 //
-//    public void setReturnDate(LocalDate returnDate) {
+//    public void setReturnDate(LocalDateTime returnDate) {
 //        this.returnDate = returnDate;
 //    }
 
