@@ -80,8 +80,11 @@ public class FinishedWorkGuiController {
         finishedWorkToUpdate.setChauffeur(finishedWork.getChauffeur());
         finishedWorkToUpdate.setCoChauffeur(finishedWork.getCoChauffeur());
 
-        finishedWorkToUpdate.setDepartureDate(finishedWork.getDepartureDate());
-        finishedWorkToUpdate.setReturnDate(finishedWork.getReturnDate());
+//        finishedWorkToUpdate.setDepartureDate(finishedWork.getDepartureDate());
+//        finishedWorkToUpdate.setReturnDate(finishedWork.getReturnDate());
+
+        finishedWorkToUpdate.setInputDepartureDate(finishedWork.getInputDepartureDate());
+        finishedWorkToUpdate.setInputReturnDate(finishedWork.getInputReturnDate());
 
         finishedWorkToUpdate.setFee(finishedWork.getFee());
 
@@ -96,8 +99,8 @@ public class FinishedWorkGuiController {
         finishedWork.setRoute(form.getRoute());
         finishedWork.setChauffeur(form.getChauffeur());
         finishedWork.setCoChauffeur(form.getCoChauffeur(), null);
-        finishedWork.setDepartureDate(form.getDepartureDate());
-        finishedWork.setReturnDate(form.getReturnDate());
+        finishedWork.setInputDepartureDate(form.getInputDepartureDate());
+        finishedWork.setInputReturnDate(form.getInputReturnDate());
         finishedWork.setFee(form.getFee());
         finishedWorkService.update(finishedWork);
 

@@ -66,13 +66,13 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
 //        finishedWork.setDepartureDate(departure);
 //        finishedWork.setReturnDate(LocalDateTime.now());
 
-//        String str1 = finishedWork.getInputDepartureDate();
-//        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        finishedWork.setDepartureDate(LocalDateTime.parse(str1, formatter1));
-//
-//        String str2 = finishedWork.getInputReturnDate();
-//        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        finishedWork.setReturnDate(LocalDateTime.parse(str2, formatter2));
+        String str3 = finishedWork.getInputDepartureDate();
+        DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        finishedWork.setDepartureDate(LocalDateTime.parse(str3, formatter3));
+
+        String str4 = finishedWork.getInputReturnDate();
+        DateTimeFormatter formatter4 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        finishedWork.setReturnDate(LocalDateTime.parse(str4, formatter4));
 
 
 

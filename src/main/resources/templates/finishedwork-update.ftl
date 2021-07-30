@@ -21,9 +21,9 @@
             <br>
             CoChauffeur:<@spring.formInput "form.coChauffeur" "" "text"/>
             <br>
-            Departure date:<@spring.formInput "form.departureDate" "" "text"/>
+            Departure date:<@spring.formInput "form.inputDepartureDate" "" "text"/>
             <br>
-            Return date:<@spring.formInput "form.returnDate" "" "text"/>
+            Return date:<@spring.formInput "form.inputReturnDate" "" "text"/>
             <br>
 <#--            Return date:<input type="date"  name="returnDate"/>-->
 <#--            <br>-->
