@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,6 +33,7 @@ public class FinishedWork {
     @Nullable
     private Chauffeur coChauffeur;
     private LocalDateTime departureDate;
+
     private LocalDateTime returnDate;
     private double fee;
 
@@ -86,19 +88,19 @@ public class FinishedWork {
             this.coChauffeur = coChauffeur;
     }
 
-//    public LocalDate getDepartureDate() {
+//    public LocalDateTime getDepartureDate() {
 //        return departureDate;
 //    }
 //
-//    public void setDepartureDate(LocalDateTime departureDate) {
+//    public void setDepartureDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime departureDate) {
 //        this.departureDate = departureDate;
 //    }
 //
-//    public LocalDate getReturnDate() {
+//    public LocalDateTime getReturnDate() {
 //        return returnDate;
 //    }
 //
-//    public void setReturnDate(LocalDateTime returnDate) {
+//    public void setReturnDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime returnDate) {
 //        this.returnDate = returnDate;
 //    }
 

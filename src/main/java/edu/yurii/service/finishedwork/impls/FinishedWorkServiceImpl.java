@@ -12,6 +12,7 @@ import edu.yurii.repository.FakeRepository;
 import edu.yurii.repository.FinishedWorkMongoRepository;
 import edu.yurii.service.finishedwork.interfaces.IFinishedWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -36,7 +37,7 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
 //    }
 
     @Override
-    public FinishedWork create(FinishedWork finishedWork) {
+    public FinishedWork create(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
         finishedWork.setDepartureDate(LocalDateTime.now());
         finishedWork.setReturnDate(LocalDateTime.now());
         return finishedWorkMongoRepository.save(finishedWork);
@@ -48,7 +49,7 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
     }
 
     @Override
-    public FinishedWork update(FinishedWork finishedWork) {
+    public FinishedWork update(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
         FinishedWork finishedWorkToUpdate = this.get(finishedWork.getId());
 
         LocalDateTime departure = finishedWorkToUpdate.getDepartureDate();
