@@ -59,8 +59,8 @@ public class FinishedWorkGuiController {
         finishedWork.setRoute(form.getRoute());
         finishedWork.setChauffeur(form.getChauffeur());
         finishedWork.setCoChauffeur(form.getCoChauffeur(), null);
-        finishedWork.setDepartureDate(form.getDepartureDate());
-        finishedWork.setReturnDate(form.getReturnDate());
+//        finishedWork.setDepartureDate(form.getDepartureDate());
+//        finishedWork.setReturnDate(form.getReturnDate());
         finishedWork.setFee(finishedWork.getFee());
         finishedWorkService.create(finishedWork);
 

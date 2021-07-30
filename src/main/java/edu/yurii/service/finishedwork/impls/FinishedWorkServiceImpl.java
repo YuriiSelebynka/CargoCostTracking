@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -49,6 +50,10 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
     @Override
     public FinishedWork update(FinishedWork finishedWork) {
         FinishedWork finishedWorkToUpdate = this.get(finishedWork.getId());
+
+        LocalDate departure = finishedWorkToUpdate.getDepartureDate();
+        finishedWork.setDepartureDate(departure);
+        finishedWork.setReturnDate(LocalDate.now());
 
         return finishedWorkMongoRepository.save(finishedWork);
     }

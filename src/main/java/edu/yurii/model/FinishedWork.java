@@ -85,21 +85,21 @@ public class FinishedWork {
             this.coChauffeur = coChauffeur;
     }
 
-    public LocalDate getDepartureDate() {
-        return departureDate;
-    }
-
-    public void setDepartureDate(LocalDate departureDate) {
-        this.departureDate = departureDate;
-    }
-
-    public LocalDate getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(LocalDate returnDate) {
-        this.returnDate = returnDate;
-    }
+//    public LocalDate getDepartureDate() {
+//        return departureDate;
+//    }
+//
+//    public void setDepartureDate(LocalDate departureDate) {
+//        this.departureDate = departureDate;
+//    }
+//
+//    public LocalDate getReturnDate() {
+//        return returnDate;
+//    }
+//
+//    public void setReturnDate(LocalDate returnDate) {
+//        this.returnDate = returnDate;
+//    }
 
     public double getFee() {
         return fee;
