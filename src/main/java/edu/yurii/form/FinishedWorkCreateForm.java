@@ -30,5 +30,8 @@ public class FinishedWorkCreateForm {
     private Chauffeur coChauffeur = null;
 //    private LocalDate departureDate;
 //    private LocalDate returnDate;
+
+    private String inputDepartureDate;
+    private String inputReturnDate;
     private double fee;
 }

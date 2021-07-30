@@ -31,5 +31,7 @@ public class FinishedWorkUpdateForm {
     private Chauffeur coChauffeur = null;
     private LocalDateTime departureDate;
     private LocalDateTime returnDate;
+    private String inputDepartureDate;
+    private String inputReturnDate;
     private double fee;
 }

@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -38,8 +39,17 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
 
     @Override
     public FinishedWork create(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
-        finishedWork.setDepartureDate(LocalDateTime.now());
-        finishedWork.setReturnDate(LocalDateTime.now());
+//        finishedWork.setDepartureDate(LocalDateTime.now());
+//        finishedWork.setReturnDate(LocalDateTime.now());
+
+        String str1 = finishedWork.getInputDepartureDate();
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        finishedWork.setDepartureDate(LocalDateTime.parse(str1, formatter1));
+
+        String str2 = finishedWork.getInputReturnDate();
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        finishedWork.setReturnDate(LocalDateTime.parse(str2, formatter2));
+
         return finishedWorkMongoRepository.save(finishedWork);
     }
 
@@ -52,9 +62,19 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
     public FinishedWork update(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
         FinishedWork finishedWorkToUpdate = this.get(finishedWork.getId());
 
-        LocalDateTime departure = finishedWorkToUpdate.getDepartureDate();
-        finishedWork.setDepartureDate(departure);
-        finishedWork.setReturnDate(LocalDateTime.now());
+//        LocalDateTime departure = finishedWorkToUpdate.getDepartureDate();
+//        finishedWork.setDepartureDate(departure);
+//        finishedWork.setReturnDate(LocalDateTime.now());
+
+//        String str1 = finishedWork.getInputDepartureDate();
+//        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        finishedWork.setDepartureDate(LocalDateTime.parse(str1, formatter1));
+//
+//        String str2 = finishedWork.getInputReturnDate();
+//        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        finishedWork.setReturnDate(LocalDateTime.parse(str2, formatter2));
+
+
 
         return finishedWorkMongoRepository.save(finishedWork);
     }

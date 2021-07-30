@@ -13,10 +13,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 @Data
@@ -32,18 +31,23 @@ public class FinishedWork {
 
     @Nullable
     private Chauffeur coChauffeur;
+
+    private String inputDepartureDate;
     private LocalDateTime departureDate;
 
+    private String inputReturnDate;
     private LocalDateTime returnDate;
     private double fee;
 
     public Chauffeur emptyChauffeur = new Chauffeur(null, "null"
             , "null", "null", 0);
 
-    public FinishedWork(Route route, Chauffeur chauffeur, Chauffeur coChauffeur, double fee) {
+    public FinishedWork(Route route, Chauffeur chauffeur, Chauffeur coChauffeur, String inputDepartureDate, String inputReturnDate, double fee) {
         this.route = route;
         this.chauffeur = chauffeur;
         this.coChauffeur = coChauffeur;
+        this.inputDepartureDate = inputDepartureDate;
+        this.inputReturnDate = inputReturnDate;
         this.fee = fee;
     }
 
@@ -87,22 +91,49 @@ public class FinishedWork {
         } else
             this.coChauffeur = coChauffeur;
     }
+//=============================================================================
+    public String getInputDepartureDate() {
+        return inputDepartureDate;
+    }
 
-//    public LocalDateTime getDepartureDate() {
-//        return departureDate;
-//    }
-//
-//    public void setDepartureDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime departureDate) {
-//        this.departureDate = departureDate;
-//    }
-//
-//    public LocalDateTime getReturnDate() {
-//        return returnDate;
-//    }
-//
-//    public void setReturnDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime returnDate) {
-//        this.returnDate = returnDate;
-//    }
+    public void setInputDepartureDate(String inputDepartureDate) {
+        this.inputDepartureDate = inputDepartureDate;
+    }
+
+    public LocalDateTime getDepartureDate() {
+        return departureDate;
+    }
+
+    public void setDepartureDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime departureDate) {
+        //this.departureDate = departureDate;
+//        LocalDateTime.parse(inputDepartureDate, DateTimeFormatter.ofPattern("yyyy-MM-dd")).atTime(LocalDateTime.now())
+//                .atOffset(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'"));
+
+        String str = getInputDepartureDate();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.departureDate = LocalDateTime.parse(str, formatter);
+    }
+
+    public String getInputReturnDate() {
+        return inputReturnDate;
+    }
+
+    public void setInputReturnDate(String inputReturnDate) {
+        this.inputReturnDate = inputReturnDate;
+    }
+
+    public LocalDateTime getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime returnDate) {
+        //this.returnDate = returnDate;
+        String str = getInputReturnDate();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.returnDate = LocalDateTime.parse(str, formatter);
+    }
+
+//=============================================================================
 
     public double getFee() {
         return fee;
