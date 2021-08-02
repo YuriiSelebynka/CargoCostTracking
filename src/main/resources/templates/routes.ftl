@@ -7,7 +7,7 @@
     <style>
         body {
             /*background: #c7b39b ;*/
-            background: no-repeat #ffffff ;
+            background: no-repeat #cae2f7;
             background-size: 100%; /* Цвет фона и путь к файлу */
             color: #00008b; /* Цвет текста */
         }
@@ -30,6 +30,14 @@
 
 
 
+        }
+
+        .b3 {
+            font-size: 40px;
+            background: #4AE435;
+            color: black;
+            width: 90%;
+            border-radius: 12pt;
         }
 
         .b4 {
@@ -57,7 +65,7 @@
 
         }
         .footer {
-            position: absolute;
+            /*position: absolute;*/
             bottom: 0;
             right: 0;
             color: black;
@@ -96,7 +104,13 @@
 
 <h1 style="font-size:60pt"> Table of routes </h1>
 <div  >
+    <td> <a href="/gui/route/create"> <input type="button" class="b3" value="Create"> </a> </td>
+    <br>
+    <br>
+
     <table class="b2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b" >
+
+
 
         <tr >
             <th>ID</th>
@@ -126,18 +140,25 @@
 
 </div>
 
-<td> <a href="/gui/route/create"> <input type="button" class="btn btn-success" value="Create"> </a> </td>
+
 <br>
-<div><img src=${"media/1.png"} alt=${"..."} /> </div>
-<div><img src=${"1.png"} alt=${"..."} /> </div>
-<div><img src=${"templates/media/1.png"} alt=${"..."} /> </div>
-<div><img src=${"templates/1.png"} alt=${"..."} /> </div>
-<div><img src=${"resources/templates/1.png"} alt=${"..."} /> </div>
-<div><img src="templates/1.png" alt="..."> </div>
+<#--<img src="{% static '1.jpg' %}" alt="My image">-->
+
+<#--<img src="resources/templates/media/1.jpg" alt="..." />-->
+<#--url ("media/1.jpg")-->
+
+<#--<img src= "1.jpg" />-->
+
+<#--<img src=${'media/1.jpg'} alt=${"..."} />-->
+<#--<img src=${'1.jpg'} alt=${"..."} />-->
+<#--<img src=${'templates/media/1.jpg'} alt=${"..."} />-->
+<#--<img src=${'templates/1.jpg'} alt=${"..."} />-->
+<#--<img src=${'resources/templates/1.jpg'} alt=${"..."} />-->
+<#--<img src='templates/1.jpg' alt="...">-->
 
 <br>
 <br>
 
-
+<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in about section</div>
 </body>
 </html>
