@@ -36,7 +36,7 @@
             font-size: 20px;
             background: #FFFF00;
             color: black;
-            width: 50%;
+            width: 75%;
             border-radius: 5pt;
         }
 
@@ -44,7 +44,7 @@
             font-size: 20px;
             background: #FF0000;
             color: black;
-            width: 50%;
+            width: 75%;
             border-radius: 5pt;
         }
 
@@ -90,10 +90,13 @@
 
 </div>
 
+<br>
+<br>
+<br>
 
 <h1 style="font-size:60pt"> Table of routes </h1>
 <div  >
-    <table class="b2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+    <table class="b2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b" >
 
         <tr >
             <th>ID</th>
@@ -124,6 +127,13 @@
 </div>
 
 <td> <a href="/gui/route/create"> <input type="button" class="btn btn-success" value="Create"> </a> </td>
+<br>
+<div><img src=${"media/1.png"} alt=${"..."} /> </div>
+<div><img src=${"1.png"} alt=${"..."} /> </div>
+<div><img src=${"templates/media/1.png"} alt=${"..."} /> </div>
+<div><img src=${"templates/1.png"} alt=${"..."} /> </div>
+<div><img src=${"resources/templates/1.png"} alt=${"..."} /> </div>
+<div><img src="templates/1.png" alt="..."> </div>
 
 <br>
 <br>
