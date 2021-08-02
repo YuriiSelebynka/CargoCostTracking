@@ -78,7 +78,7 @@
             <td><a  href="/"> <input type="button" class="table1" align="center" style="font-size:40pt" value="main"> </a></td>
             <td><a href="/gui/route/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="routes"> </a></td>
             <td><a href="/gui/chauffeur/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="chauffeurs"> </a></td>
-            <td><a href="/gui/finishedwork/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="about"> </a></td>
+            <td><a href="/info.html"> <input type="button" class="table1" align="center" style="font-size:40pt" value="info"> </a></td>
 
         </tr></table>
 
