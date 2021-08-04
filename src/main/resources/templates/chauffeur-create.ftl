@@ -95,7 +95,7 @@
             <br><br>
 
             <input type="submit" value="Create" class="createButton"/>
-            <a href="/gui/route/all"> <input type="button" value="cancel" class="cancelButton" > </a>
+            <a href="/gui/chauffeur/all"> <input type="button" value="cancel" class="cancelButton" > </a>
         </form>
     </fieldset>
 </div>
