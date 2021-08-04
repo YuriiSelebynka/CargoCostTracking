@@ -57,9 +57,9 @@
         }
 
         .footer {
-            position: absolute;
+
             bottom: 0;
-            right: 0;
+
             color: black;
         }
 
@@ -125,10 +125,6 @@
         <tr >
             <th>Route ID</th>
             <th>Route Name</th>
-            <th>Chauffeur ID</th>
-            <th>Chauffeur Surname</th>
-            <th>Chauffeur Firstname</th>
-
         </tr>
 
         <#list routes as route>
@@ -137,7 +133,22 @@
                 <td>${route.name}</td>
             </tr>
         </#list>
+
+    </table>
+
+    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+
+        <tr >
+
+            <th>Chauffeur ID</th>
+            <th>Chauffeur Surname</th>
+            <th>Chauffeur Firstname</th>
+
+        </tr >
+
+
         <#list chauffeurs as chauffeur>
+            <tr >
                 <td>${chauffeur.id}</td>
                 <td>${chauffeur.surname}</td>
                 <td>${chauffeur.firstname}</td>
@@ -149,7 +160,10 @@
 
 </div>
 
-<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in about section</div>
+<br>
+<br>
+
+<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in info section</div>
 
 </body>
 </html>
