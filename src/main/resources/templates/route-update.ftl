@@ -91,7 +91,7 @@
             Days in route:<br><@spring.formInput "form.daysInRoute" "" "text"/>
             <br><br>
             Payment:<br><@spring.formInput "form.payment" "" "text"/>
-            <br>
+            <br><br>
             <input type="submit" value="update" class="createButton"/>
             <a href="/gui/route/all"> <input type="button" value="cancel" class="cancelButton" > </a>
         </form>
