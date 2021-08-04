@@ -140,6 +140,6 @@
 <br>
 <br>
 
-<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in about section</div>
+<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in info section</div>
 </body>
 </html>
