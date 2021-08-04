@@ -22,9 +22,6 @@
         .table3 {
             font-size: 20px;
             color: #00008b;
-            /*width: 90%;*/
-            /*border-radius: 5px;*/
-            /*border-collapse: collapse;*/
         }
 
         .createButton {
@@ -34,8 +31,6 @@
             width: 7%;
             border-radius: 12pt;
         }
-
-
 
         .cancelButton {
             font-size: 40px;
@@ -52,6 +47,7 @@
             min-height: 0em;
             border-radius: 5px;
         }
+
         .footer {
             position: absolute;
             bottom: 0;
@@ -60,8 +56,6 @@
         }
 
     </style>
-
-
 
 </head>
 <body style="text-align: center">
@@ -105,7 +99,7 @@
             <br><@spring.formInput "form.payment" "" "text"/>
             <br><br>
             <input type="submit" value="create" class="createButton"/>
-            <a href="/gui/routes/all"> <input type="button" value="cancel" class="cancelButton" > </a>
+            <a href="/gui/route/all"> <input type="button" value="cancel" class="cancelButton" > </a>
         </form>
     </fieldset>
 </div>
