@@ -94,7 +94,7 @@
             Experience (in years):<br><@spring.formInput "form.experience" "" "text"/>
             <br><br>
 
-            <input type="submit" value="Create" class="createButton"/>
+            <input type="submit" value="create" class="createButton"/>
             <a href="/gui/chauffeur/all"> <input type="button" value="cancel" class="cancelButton" > </a>
         </form>
     </fieldset>
