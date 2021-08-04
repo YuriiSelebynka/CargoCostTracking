@@ -9,8 +9,12 @@ package edu.yurii.controller.gui;
 
 import edu.yurii.form.FinishedWorkCreateForm;
 import edu.yurii.form.FinishedWorkUpdateForm;
+import edu.yurii.model.Chauffeur;
 import edu.yurii.model.FinishedWork;
+import edu.yurii.model.Route;
+import edu.yurii.service.chauffeur.impls.ChauffeurServiceImpl;
 import edu.yurii.service.finishedwork.impls.FinishedWorkServiceImpl;
+import edu.yurii.service.route.impls.RouteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,10 +50,23 @@ public class FinishedWorkGuiController {
         return "redirect:/gui/finishedwork/all";
     }
 
+    @Autowired
+    ChauffeurServiceImpl chauffeurService;
+    @Autowired
+    RouteServiceImpl routeService;
     @GetMapping("/create")
     public String create(Model model) {
         FinishedWorkCreateForm finishedWorkToCreate = new FinishedWorkCreateForm();
         model.addAttribute("form", finishedWorkToCreate);
+//===========================================================
+        List<Route> routeList = routeService.getAll();
+        model.addAttribute("routes", routeList);
+//===========================================================
+
+        //===========================================================
+        List<Chauffeur> chauffeurs = chauffeurService.getAll();
+        model.addAttribute("chauffeurs", chauffeurs);
+//===========================================================
         return "finishedwork-create";
     }
 
