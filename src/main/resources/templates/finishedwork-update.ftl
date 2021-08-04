@@ -19,6 +19,14 @@
             border-radius: 5pt;
         }
 
+        .table2 {
+            font-size: 20px;
+            color: #00008b;
+            width: 90%;
+            border-radius: 5px;
+            border-collapse: collapse;
+        }
+
         .table3 {
             font-size: 20px;
             color: #00008b;
@@ -49,9 +57,9 @@
         }
 
         .footer {
-            position: absolute;
+
             bottom: 0;
-            right: 0;
+
             color: black;
         }
 
@@ -108,6 +116,52 @@
 
 <br>
 <br>
+
+<div>
+
+    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+
+        <tr >
+            <th>Route ID</th>
+            <th>Route Name</th>
+        </tr>
+
+        <#list routes as route>
+            <tr>
+                <td>${route.id}</td>
+                <td>${route.name}</td>
+            </tr>
+        </#list>
+
+    </table>
+
+    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+
+        <tr >
+
+            <th>Chauffeur ID</th>
+            <th>Chauffeur Surname</th>
+            <th>Chauffeur Firstname</th>
+
+        </tr >
+
+
+        <#list chauffeurs as chauffeur>
+            <tr >
+                <td>${chauffeur.id}</td>
+                <td>${chauffeur.surname}</td>
+                <td>${chauffeur.firstname}</td>
+
+            </tr>
+        </#list>
+
+    </table>
+
+</div>
+
+<br>
+<br>
+
 <div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in about section</div>
 
 </body>

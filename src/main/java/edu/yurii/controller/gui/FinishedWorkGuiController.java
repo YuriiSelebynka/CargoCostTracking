@@ -87,6 +87,11 @@ public class FinishedWorkGuiController {
         return "redirect:/gui/finishedwork/all";
     }
 
+
+//    @Autowired
+//    ChauffeurServiceImpl chauffeurService;
+//    @Autowired
+//    RouteServiceImpl routeService;
     @GetMapping("/update/{id}")
     public String update(Model model, @PathVariable("id") String id) {
         FinishedWork finishedWork = finishedWorkService.get(id);
@@ -106,6 +111,17 @@ public class FinishedWorkGuiController {
         finishedWorkToUpdate.setFee(finishedWork.getFee());
 
         model.addAttribute("form", finishedWorkToUpdate);
+
+        //===========================================================
+        List<Route> routeList = routeService.getAll();
+        model.addAttribute("routes", routeList);
+//===========================================================
+
+        //===========================================================
+        List<Chauffeur> chauffeurs = chauffeurService.getAll();
+        model.addAttribute("chauffeurs", chauffeurs);
+//===========================================================
+
         return "finishedwork-update";
     }
 
