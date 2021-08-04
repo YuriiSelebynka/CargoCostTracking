@@ -91,9 +91,9 @@
             <br><br>
             CoChauffeur:<br><@spring.formInput "form.coChauffeur" "" "text"/>
             <br><br>
-            Departure date<br> (use format YYYY-MM-DD HH:MM:SS):<br><@spring.formInput "form.inputDepartureDate" "" "text"/>
+            Departure date<br>(use format YYYY-MM-DD HH:MM:SS):<br><@spring.formInput "form.inputDepartureDate" "" "text"/>
             <br><br>
-            Return date<br> (use format YYYY-MM-DD HH:MM:SS):<br><@spring.formInput "form.inputReturnDate" "" "text"/>
+            Return date<br>(use format YYYY-MM-DD HH:MM:SS):<br><@spring.formInput "form.inputReturnDate" "" "text"/>
             <br><br>
             <#--                Departure date:<@spring.formInput "form.departureDate.now" "" "text"/>-->
             <#--                <br>-->
