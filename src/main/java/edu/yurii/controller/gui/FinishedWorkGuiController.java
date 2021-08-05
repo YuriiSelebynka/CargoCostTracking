@@ -1,4 +1,5 @@
 package edu.yurii.controller.gui;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -33,20 +34,20 @@ public class FinishedWorkGuiController {
     public String getAll(Model model) {
         List<FinishedWork> finishedWorks = finishedWorkService.getAll();
         model.addAttribute("finishedworks", finishedWorks);
+
         return "finishedworks";
     }
 
-    //===========================================================
     @RequestMapping("/{id}")
     public FinishedWork get(@PathVariable("id") String id) {
+
         return finishedWorkService.get(id);
     }
 
     @RequestMapping("/delete/{id}")
     public String delete(Model model, @PathVariable("id") String id) {
-//        List<Route> routeList = routeService.getAll();
-//        model.addAttribute("routes", routeList);
         finishedWorkService.delete(id);
+
         return "redirect:/gui/finishedwork/all";
     }
 
@@ -56,17 +57,14 @@ public class FinishedWorkGuiController {
     RouteServiceImpl routeService;
     @GetMapping("/create")
     public String create(Model model) {
-        FinishedWorkCreateForm finishedWorkToCreate = new FinishedWorkCreateForm();
+        FinishedWorkCreateForm finishedWorkToCreate =
+                new FinishedWorkCreateForm();
         model.addAttribute("form", finishedWorkToCreate);
-//===========================================================
         List<Route> routeList = routeService.getAll();
         model.addAttribute("routes", routeList);
-//===========================================================
-
-        //===========================================================
         List<Chauffeur> chauffeurs = chauffeurService.getAll();
         model.addAttribute("chauffeurs", chauffeurs);
-//===========================================================
+
         return "finishedwork-create";
     }
 
@@ -76,9 +74,6 @@ public class FinishedWorkGuiController {
         finishedWork.setRoute(form.getRoute());
         finishedWork.setChauffeur(form.getChauffeur());
         finishedWork.setCoChauffeur(form.getCoChauffeur(), null);
-//        finishedWork.setDepartureDate(form.getDepartureDate());
-//        finishedWork.setReturnDate(form.getReturnDate());
-
         finishedWork.setInputDepartureDate(form.getInputDepartureDate());
         finishedWork.setInputReturnDate(form.getInputReturnDate());
         finishedWork.setFee(finishedWork.getFee());
@@ -87,40 +82,25 @@ public class FinishedWorkGuiController {
         return "redirect:/gui/finishedwork/all";
     }
 
-
-//    @Autowired
-//    ChauffeurServiceImpl chauffeurService;
-//    @Autowired
-//    RouteServiceImpl routeService;
     @GetMapping("/update/{id}")
     public String update(Model model, @PathVariable("id") String id) {
         FinishedWork finishedWork = finishedWorkService.get(id);
-        FinishedWorkUpdateForm finishedWorkToUpdate = new FinishedWorkUpdateForm();
-
+        FinishedWorkUpdateForm finishedWorkToUpdate =
+                new FinishedWorkUpdateForm();
         finishedWorkToUpdate.setId(finishedWork.getId());
         finishedWorkToUpdate.setRoute(finishedWork.getRoute());
         finishedWorkToUpdate.setChauffeur(finishedWork.getChauffeur());
         finishedWorkToUpdate.setCoChauffeur(finishedWork.getCoChauffeur());
-
-//        finishedWorkToUpdate.setDepartureDate(finishedWork.getDepartureDate());
-//        finishedWorkToUpdate.setReturnDate(finishedWork.getReturnDate());
-
-        finishedWorkToUpdate.setInputDepartureDate(finishedWork.getInputDepartureDate());
-        finishedWorkToUpdate.setInputReturnDate(finishedWork.getInputReturnDate());
-
+        finishedWorkToUpdate.setInputDepartureDate(finishedWork
+                .getInputDepartureDate());
+        finishedWorkToUpdate.setInputReturnDate(finishedWork
+                .getInputReturnDate());
         finishedWorkToUpdate.setFee(finishedWork.getFee());
-
         model.addAttribute("form", finishedWorkToUpdate);
-
-        //===========================================================
         List<Route> routeList = routeService.getAll();
         model.addAttribute("routes", routeList);
-//===========================================================
-
-        //===========================================================
         List<Chauffeur> chauffeurs = chauffeurService.getAll();
         model.addAttribute("chauffeurs", chauffeurs);
-//===========================================================
 
         return "finishedwork-update";
     }

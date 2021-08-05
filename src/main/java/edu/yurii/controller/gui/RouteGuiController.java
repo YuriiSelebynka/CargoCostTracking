@@ -1,4 +1,5 @@
 package edu.yurii.controller.gui;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -35,14 +36,14 @@ public class RouteGuiController {
 
     @RequestMapping("/{id}")
     public Route get(@PathVariable ("id") String id) {
+
         return routeService.get(id);
     }
 
     @RequestMapping("/delete/{id}")
     public String delete(Model model, @PathVariable("id") String id) {
-//        List<Route> routeList = routeService.getAll();
-//        model.addAttribute("routes", routeList);
         routeService.delete(id);
+
         return "redirect:/gui/route/all";
     }
 
@@ -50,6 +51,7 @@ public class RouteGuiController {
     public String create(Model model) {
         RouteCreateForm routeToCreate = new RouteCreateForm();
         model.addAttribute("form", routeToCreate);
+
         return "route-create";
     }
 
@@ -69,13 +71,13 @@ public class RouteGuiController {
     public String update(Model model, @PathVariable("id") String id) {
         Route route = routeService.get(id);
         RouteUpdateForm routeToUpdate = new RouteUpdateForm();
-
         routeToUpdate.setId(route.getId());
         routeToUpdate.setName(route.getName());
         routeToUpdate.setDistance(route.getDistance());
         routeToUpdate.setDaysInRoute(route.getDaysInRoute());
         routeToUpdate.setPayment(route.getPayment());
         model.addAttribute("form", routeToUpdate);
+
         return "route-update";
     }
 
@@ -87,7 +89,6 @@ public class RouteGuiController {
         route.setDistance(form.getDistance());
         route.setDaysInRoute(form.getDaysInRoute());
         route.setPayment(form.getPayment());
-
         routeService.update(route);
 
         return "redirect:/gui/route/all";

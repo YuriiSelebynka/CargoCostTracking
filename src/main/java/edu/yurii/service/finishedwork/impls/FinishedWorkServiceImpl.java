@@ -1,4 +1,5 @@
 package edu.yurii.service.finishedwork.impls;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -16,7 +17,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -38,16 +38,15 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
 //    }
 
     @Override
-    public FinishedWork create(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
-//        finishedWork.setDepartureDate(LocalDateTime.now());
-//        finishedWork.setReturnDate(LocalDateTime.now());
-
+    public FinishedWork create(@DateTimeFormat(
+            pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
         String str1 = finishedWork.getInputDepartureDate();
-        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter1 = DateTimeFormatter
+                .ofPattern("yyyy-MM-dd HH:mm:ss");
         finishedWork.setDepartureDate(LocalDateTime.parse(str1, formatter1));
-
         String str2 = finishedWork.getInputReturnDate();
-        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter2 = DateTimeFormatter
+                .ofPattern("yyyy-MM-dd HH:mm:ss");
         finishedWork.setReturnDate(LocalDateTime.parse(str2, formatter2));
 
         return finishedWorkMongoRepository.save(finishedWork);
@@ -59,22 +58,18 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
     }
 
     @Override
-    public FinishedWork update(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
+    public FinishedWork update(@DateTimeFormat(
+            pattern="yyyy-MM-dd HH:mm:ss") FinishedWork finishedWork) {
         FinishedWork finishedWorkToUpdate = this.get(finishedWork.getId());
-
-//        LocalDateTime departure = finishedWorkToUpdate.getDepartureDate();
-//        finishedWork.setDepartureDate(departure);
-//        finishedWork.setReturnDate(LocalDateTime.now());
-
         String str3 = finishedWork.getInputDepartureDate();
-        DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        finishedWork.setDepartureDate(LocalDateTime.parse(str3, formatter3));
-
+        DateTimeFormatter formatter3 = DateTimeFormatter
+                .ofPattern("yyyy-MM-dd HH:mm:ss");
+        finishedWork.setDepartureDate(LocalDateTime
+                .parse(str3, formatter3));
         String str4 = finishedWork.getInputReturnDate();
-        DateTimeFormatter formatter4 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter4 = DateTimeFormatter
+                .ofPattern("yyyy-MM-dd HH:mm:ss");
         finishedWork.setReturnDate(LocalDateTime.parse(str4, formatter4));
-
-
 
         return finishedWorkMongoRepository.save(finishedWork);
     }
@@ -88,7 +83,6 @@ public class FinishedWorkServiceImpl implements IFinishedWorkService {
 
     @Override
     public List<FinishedWork> getAll() {
-        //return fakeRepository.getAll();
         return finishedWorkMongoRepository.findAll();
     }
 }

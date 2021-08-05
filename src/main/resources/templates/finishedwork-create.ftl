@@ -6,6 +6,7 @@
     <title> CCT New finished work </title>
 
     <style>
+
         body {
             background: no-repeat #cae2f7;
             background-size: 100%;
@@ -57,9 +58,7 @@
         }
 
         .footer {
-
             bottom: 0;
-
             color: black;
         }
 
@@ -70,14 +69,21 @@
 
 <div>
 
-    <table width="99%" align="center" style="text-align: center" class="menu" >
+    <table width="99%" align="center" style="text-align: center" class="menu">
 
-        <tr >
-            <td><a  href="/"> <input type="button" class="table1" align="center" style="font-size:40pt" value="main"> </a></td>
-            <td><a href="/gui/chauffeur/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="chauffeurs"> </a></td>
-            <td><a href="/gui/finishedwork/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="finished work"> </a></td>
-            <td><a href="/info.html"> <input type="button" class="table1" align="center" style="font-size:40pt" value="info"> </a></td>
-
+        <tr>
+            <td><a href="/"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="main"> </a></td>
+            <td><a href="/gui/chauffeur/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="chauffeurs"> </a></td>
+            <td><a href="/gui/finishedwork/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="finished work"> </a></td>
+            <td><a href="/info.html"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="info"> </a></td>
         </tr></table>
 
 </div>
@@ -99,19 +105,15 @@
             <br><br>
             CoChauffeur:<br><@spring.formInput "form.coChauffeur" "" "text"/>
             <br><br>
-            Departure date<br>(use format YYYY-MM-DD HH:MM:SS):<br><@spring.formInput "form.inputDepartureDate" "" "text"/>
+            Departure date<br>(use format YYYY-MM-DD HH:MM:SS):
+            <br><@spring.formInput "form.inputDepartureDate" "" "text"/>
             <br><br>
-            Return date<br>(use format YYYY-MM-DD HH:MM:SS):<br><@spring.formInput "form.inputReturnDate" "" "text"/>
+            Return date<br>(use format YYYY-MM-DD HH:MM:SS):
+            <br><@spring.formInput "form.inputReturnDate" "" "text"/>
             <br><br>
-            <#--                Departure date:<@spring.formInput "form.departureDate.now" "" "text"/>-->
-            <#--                <br>-->
-            <#--                Return date:<@spring.formInput "form.returnDate.now" "" "text"/>-->
-            <#--                <br>-->
-            <#--                Fee:<@spring.formInput "form.fee" "" "text"/>-->
-            <#--                <br>-->
-
             <input type="submit" value="create" class="createButton"/>
-            <a href="/gui/finishedwork/all"> <input type="button" value="cancel" class="cancelButton" > </a>
+            <a href="/gui/finishedwork/all"> <input type="button"
+               value="cancel" class="cancelButton"></a>
         </form>
     </fieldset>
 </div>
@@ -120,7 +122,8 @@
 
 <div>
 
-    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+    <table class="table2"  width="90%" align="center"
+           style="text-align: center" border="2px solid #00008b">
 
         <tr >
             <th>Route ID</th>
@@ -136,23 +139,20 @@
 
     </table>
 
-    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+    <table class="table2"  width="90%" align="center"
+           style="text-align: center" border="2px solid #00008b">
 
         <tr >
-
             <th>Chauffeur ID</th>
             <th>Chauffeur Surname</th>
             <th>Chauffeur Firstname</th>
-
         </tr >
-
 
         <#list chauffeurs as chauffeur>
             <tr >
                 <td>${chauffeur.id}</td>
                 <td>${chauffeur.surname}</td>
                 <td>${chauffeur.firstname}</td>
-
             </tr>
         </#list>
 
@@ -163,7 +163,8 @@
 <br>
 <br>
 
-<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in info section</div>
+<div class="footer"> © Copyright 2021 Yurii Selebynka (1996)
+    <br> All rights reserved <br> Details - in info section</div>
 
 </body>
 </html>

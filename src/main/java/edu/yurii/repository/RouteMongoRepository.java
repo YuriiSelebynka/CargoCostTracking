@@ -1,4 +1,5 @@
 package edu.yurii.repository;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -12,5 +13,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RouteMongoRepository extends MongoRepository<Route, String> {
+public interface RouteMongoRepository extends
+        MongoRepository<Route, String> {
 }

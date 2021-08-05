@@ -1,4 +1,5 @@
 package edu.yurii.model;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking

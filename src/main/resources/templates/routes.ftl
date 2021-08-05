@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>CCT Table of Routes</title>
     <style>
+
         body {
             background: no-repeat #cae2f7;
             background-size: 100%;
@@ -70,14 +71,21 @@
 
 <div >
 
-    <table width="99%" align="center" style="text-align: center" class="menu" >
+    <table width="99%" align="center" style="text-align: center" class="menu">
 
         <tr >
-            <td><a  href="/"> <input type="button" class="table1" align="center" style="font-size:40pt" value="main"> </a></td>
-            <td><a href="/gui/chauffeur/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="chauffeurs"> </a></td>
-            <td><a href="/gui/finishedwork/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="finished work"> </a></td>
-            <td><a href="/info.html"> <input type="button" class="table1" align="center" style="font-size:40pt" value="info"> </a></td>
-
+            <td><a href="/"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="main"> </a></td>
+            <td><a href="/gui/chauffeur/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="chauffeurs"> </a></td>
+            <td><a href="/gui/finishedwork/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="finished work"> </a></td>
+            <td><a href="/info.html"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="info"> </a></td>
         </tr></table>
 
 </div>
@@ -88,12 +96,14 @@
 
 <h1 style="font-size:60pt"> Table of routes </h1>
 <div>
-    <td> <a href="/gui/route/create"> <input type="button" class="createButton" value="Create"> </a> </td>
+    <td> <a href="/gui/route/create"> <input type="button"
+            class="createButton" value="Create"></a></td>
 
     <br>
     <br>
 
-    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+    <table class="table2"  width="90%" align="center"
+           style="text-align: center" border="2px solid #00008b">
 
         <tr >
             <th>ID</th>
@@ -112,9 +122,12 @@
             <td>${route.distance}</td>
             <td>${route.daysInRoute}</td>
             <td>${route.payment}</td>
-            <td > <a href="/gui/route/update/${route.id}"> <input type="button" align="center" class="updateButton" value="Edit"> </a> </td>
-            <td > <a href="/gui/route/delete/${route.id}"> <input type="button" align="center" class="deleteButton" value="Del"> </a> </td>
-
+            <td > <a href="/gui/route/update/${route.id}">
+                    <input type="button" align="center"
+                           class="updateButton" value="Edit"></a></td>
+            <td > <a href="/gui/route/delete/${route.id}">
+                    <input type="button" align="center"
+                           class="deleteButton" value="Del"></a></td>
         </tr>
         </#list>
 
@@ -123,23 +136,11 @@
 </div>
 
 <br>
-<#--<img src="{% static '1.jpg' %}" alt="My image">-->
-
-<#--<img src="resources/templates/media/1.jpg" alt="..." />-->
-<#--url ("media/1.jpg")-->
-
-<#--<img src= "1.jpg" />-->
-
-<#--<img src=${'media/1.jpg'} alt=${"..."} />-->
-<#--<img src=${'1.jpg'} alt=${"..."} />-->
-<#--<img src=${'templates/media/1.jpg'} alt=${"..."} />-->
-<#--<img src=${'templates/1.jpg'} alt=${"..."} />-->
-<#--<img src=${'resources/templates/1.jpg'} alt=${"..."} />-->
-<#--<img src='templates/1.jpg' alt="...">-->
 
 <br>
 <br>
 
-<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in info section</div>
+<div class="footer"> © Copyright 2021 Yurii Selebynka (1996)
+    <br> All rights reserved <br> Details - in info section</div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 package edu.yurii.controller.rest;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -20,8 +21,6 @@ public class RouteRestController {
 
     @Autowired
     RouteServiceImpl routeService;
-
-    // CRUD - create, read, update, delete; get all
 
     @RequestMapping("/all")
     public List<Route> getAll() {

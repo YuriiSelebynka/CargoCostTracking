@@ -1,4 +1,5 @@
 package edu.yurii.service.route.impls;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -9,7 +10,6 @@ package edu.yurii.service.route.impls;
 
 import edu.yurii.model.Route;
 import edu.yurii.repository.FakeRepository;
-//import edu.yurii.repository.FakeRouteRepository;
 import edu.yurii.repository.RouteMongoRepository;
 import edu.yurii.service.route.interfaces.IRouteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,6 @@ public class RouteServiceImpl implements IRouteService {
 
     @Override
     public Route update(Route route) {
-        //Route routeToUpdate = this.get(route.getId());
         return routeMongoRepository.save(route);
     }
 

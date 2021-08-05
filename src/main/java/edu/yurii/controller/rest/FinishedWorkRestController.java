@@ -1,4 +1,5 @@
 package edu.yurii.controller.rest;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -7,7 +8,6 @@ package edu.yurii.controller.rest;
   @since 27.07.21 - 16.59
 */
 
-import edu.yurii.model.Chauffeur;
 import edu.yurii.model.FinishedWork;
 import edu.yurii.service.finishedwork.impls.FinishedWorkServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,5 @@
 package edu.yurii.model;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -11,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-
 import java.util.Objects;
 
 @Data
@@ -26,7 +26,8 @@ public class Chauffeur {
     private String patronymic;
     private double experience;
 
-    public Chauffeur(String surname, String firstname, String patronymic, double experience) {
+    public Chauffeur(String surname, String firstname, String patronymic
+            , double experience) {
         this.surname = surname;
         this.firstname = firstname;
         this.patronymic = patronymic;
@@ -43,15 +44,13 @@ public class Chauffeur {
 
     public String getSurname() {
         if ("@null".equals(surname)) {
-            //return "";
             return null;
         } else
         return surname;
     }
-//"@null".equals(surname)
+
     public void setSurname(String surname) {
         if ("@null".equals(surname)) {
-            //this.surname = getSurname();
             this.surname = null;
         } else
         this.surname = surname;
@@ -80,8 +79,6 @@ public class Chauffeur {
     public void setExperience(double experience) {
         this.experience = experience;
     }
-
-
 
     @Override
     public boolean equals(Object o) {

@@ -1,4 +1,5 @@
 package edu.yurii.model;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -13,7 +14,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
@@ -22,19 +22,14 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FinishedWork {
-    //Код маршруту, Код водія, Дата відправлення, Дата повернення, Премія
     @Id
     private String id;
     private Route route;
     private Chauffeur chauffeur;
-    //@Value("${coChauffeur:#{null}}")
-
     @Nullable
     private Chauffeur coChauffeur;
-
     private String inputDepartureDate;
     private LocalDateTime departureDate;
-
     private String inputReturnDate;
     private LocalDateTime returnDate;
     private double fee;
@@ -42,7 +37,8 @@ public class FinishedWork {
     public Chauffeur emptyChauffeur = new Chauffeur(null, "null"
             , "null", "null", 0);
 
-    public FinishedWork(Route route, Chauffeur chauffeur, Chauffeur coChauffeur, String inputDepartureDate, String inputReturnDate, double fee) {
+    public FinishedWork(Route route, Chauffeur chauffeur, Chauffeur coChauffeur
+            , String inputDepartureDate, String inputReturnDate, double fee) {
         this.route = route;
         this.chauffeur = chauffeur;
         this.coChauffeur = coChauffeur;
@@ -82,16 +78,14 @@ public class FinishedWork {
         return coChauffeur;
     }
 
-    //@DefaultValue("${finishedWork.coChauffeur:@null}")
     @Nullable
     public void setCoChauffeur(Chauffeur coChauffeur, Object o) {
-        //if ("@null".equals(coChauffeur)) {
         if (coChauffeur == null) {
             this.coChauffeur = null;
         } else
             this.coChauffeur = coChauffeur;
     }
-//=============================================================================
+
     public String getInputDepartureDate() {
         return inputDepartureDate;
     }
@@ -104,13 +98,11 @@ public class FinishedWork {
         return departureDate;
     }
 
-    public void setDepartureDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime departureDate) {
-        //this.departureDate = departureDate;
-//        LocalDateTime.parse(inputDepartureDate, DateTimeFormatter.ofPattern("yyyy-MM-dd")).atTime(LocalDateTime.now())
-//                .atOffset(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'"));
-
+    public void setDepartureDate(@DateTimeFormat(
+            pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime departureDate) {
         String str = getInputDepartureDate();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                "yyyy-MM-dd HH:mm:ss");
         this.departureDate = LocalDateTime.parse(str, formatter);
     }
 
@@ -126,26 +118,26 @@ public class FinishedWork {
         return returnDate;
     }
 
-    public void setReturnDate(@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime returnDate) {
-        //this.returnDate = returnDate;
+    public void setReturnDate(@DateTimeFormat(
+            pattern="yyyy-MM-dd HH:mm:ss") LocalDateTime returnDate) {
         String str = getInputReturnDate();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                "yyyy-MM-dd HH:mm:ss");
         this.returnDate = LocalDateTime.parse(str, formatter);
     }
-
-//=============================================================================
 
     public double getFee() {
         return fee;
     }
 
     public void setFee(double fee) {
-        //this.fee = fee;
         if (coChauffeur!=null) {
-            this.fee = (chauffeur.getExperience() * 0.1 + 1) * (coChauffeur.getExperience() * 0.1 + 1) * route.getPayment();
+            this.fee = (chauffeur.getExperience() * 0.1 + 1) * (coChauffeur
+                    .getExperience() * 0.1 + 1) * route.getPayment();
         }
         else{
-            this.fee = (chauffeur.getExperience() * 0.1 + 1) * route.getPayment();
+            this.fee = (chauffeur.getExperience() * 0.1 + 1) * route
+                    .getPayment();
         }
     }
 

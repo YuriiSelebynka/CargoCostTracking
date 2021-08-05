@@ -1,4 +1,5 @@
 package edu.yurii.form;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -12,10 +13,7 @@ import edu.yurii.model.Route;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.lang.Nullable;
-
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -23,14 +21,8 @@ import java.time.LocalDate;
 public class FinishedWorkCreateForm {
     private Route route;
     private Chauffeur chauffeur;
-    //@Value("null")
-    //@Value("${coChauffeur:#{null}}")
-    //@Value("${coChauffeur:0}")
     @Nullable
     private Chauffeur coChauffeur = null;
-//    private LocalDate departureDate;
-//    private LocalDate returnDate;
-
     private String inputDepartureDate;
     private String inputReturnDate;
     private double fee;

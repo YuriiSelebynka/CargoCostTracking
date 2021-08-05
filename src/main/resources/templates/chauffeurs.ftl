@@ -6,6 +6,7 @@
     <title> CCT Table of Chauffeurs </title>
 
     <style>
+
         body {
             background: no-repeat #cae2f7;
             background-size: 100%;
@@ -72,14 +73,21 @@
 <body style="text-align: center">
 <div>
 
-    <table width="99%" align="center" style="text-align: center" class="menu" >
+    <table width="99%" align="center" style="text-align: center" class="menu">
 
         <tr >
-            <td><a  href="/"> <input type="button" class="table1" align="center" style="font-size:40pt" value="main"> </a></td>
-            <td><a href="/gui/route/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="routes"> </a></td>
-            <td><a href="/gui/finishedwork/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="finished work"> </a></td>
-            <td><a href="/info.html"> <input type="button" class="table1" align="center" style="font-size:40pt" value="info"> </a></td>
-
+            <td><a href="/"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="main"> </a></td>
+            <td><a href="/gui/route/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="routes"> </a></td>
+            <td><a href="/gui/finishedwork/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="finished work"> </a></td>
+            <td><a href="/info.html"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="info"> </a></td>
         </tr></table>
 
 </div>
@@ -92,12 +100,14 @@
 
 <div>
 
-    <td><a href="/gui/chauffeur/create" > <input type="button" class="createButton" value="Create"></a></td>
+    <td><a href="/gui/chauffeur/create" > <input type="button"
+           class="createButton" value="Create"></a></td>
 
     <br>
     <br>
 
-    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+    <table class="table2"  width="90%" align="center"
+           style="text-align: center" border="2px solid #00008b">
         <tr>
             <th>ID</th>
             <th>Surname</th>
@@ -116,10 +126,12 @@
                 <td>${chauffeur.firstname}</td>
                 <td>${chauffeur.patronymic}</td>
                 <td>${chauffeur.experience}</td>
-                <td>  <a href="/gui/chauffeur/update/${chauffeur.id}" > <input type="button" class="updateButton" value="Edit">  </a>  </td>
-                <td>  <a href="/gui/chauffeur/delete/${chauffeur.id}" > <input type="button" class="deleteButton" value="Del">  </a>  </td>
-
-
+                <td> <a href="/gui/chauffeur/update/${chauffeur.id}">
+                        <input type="button" class="updateButton"
+                               value="Edit"> </a></td>
+                <td> <a href="/gui/chauffeur/delete/${chauffeur.id}">
+                        <input type="button" class="deleteButton"
+                               value="Del"> </a></td>
             </tr>
         </#list>
 
@@ -130,7 +142,8 @@
 <br>
 <br>
 
-<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in about section</div>
+<div class="footer"> © Copyright 2021 Yurii Selebynka (1996)
+    <br> All rights reserved <br> Details - in info section</div>
 
 </body>
 </html>

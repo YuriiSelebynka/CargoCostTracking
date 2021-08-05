@@ -1,4 +1,5 @@
 package edu.yurii.controller.gui;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -29,19 +30,20 @@ public class ChauffeurGuiController {
     public String getAll(Model model) {
         List<Chauffeur> chauffeurs = chauffeurService.getAll();
         model.addAttribute("chauffeurs", chauffeurs);
+
         return "chauffeurs";
     }
-//===========================================================
+
     @RequestMapping("/{id}")
     public Chauffeur get(@PathVariable("id") String id) {
+
         return chauffeurService.get(id);
     }
 
     @RequestMapping("/delete/{id}")
     public String delete(Model model, @PathVariable("id") String id) {
-//        List<Route> routeList = routeService.getAll();
-//        model.addAttribute("routes", routeList);
         chauffeurService.delete(id);
+
         return "redirect:/gui/chauffeur/all";
     }
 
@@ -49,6 +51,7 @@ public class ChauffeurGuiController {
     public String create(Model model) {
         ChauffeurCreateForm chauffeurToCreate = new ChauffeurCreateForm();
         model.addAttribute("form", chauffeurToCreate);
+
         return "chauffeur-create";
     }
 
@@ -68,14 +71,13 @@ public class ChauffeurGuiController {
     public String update(Model model, @PathVariable("id") String id) {
         Chauffeur chauffeur = chauffeurService.get(id);
         ChauffeurUpdateForm chauffeurToUpdate = new ChauffeurUpdateForm();
-
         chauffeurToUpdate.setId(chauffeur.getId());
         chauffeurToUpdate.setSurname(chauffeur.getSurname());
         chauffeurToUpdate.setFirstname(chauffeur.getFirstname());
         chauffeurToUpdate.setPatronymic(chauffeur.getPatronymic());
         chauffeurToUpdate.setExperience(chauffeur.getExperience());
-
         model.addAttribute("form", chauffeurToUpdate);
+
         return "chauffeur-update";
     }
 

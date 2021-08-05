@@ -6,6 +6,7 @@
     <title> CCT Table of Finished Work </title>
 
     <style>
+
         body {
             background: no-repeat #cae2f7;
             background-size: 100%;
@@ -59,7 +60,6 @@
             border-radius: 5px;
         }
         .footer {
-
             bottom: 0;
             right: 0;
             color: black;
@@ -72,14 +72,21 @@
 <body style="text-align: center">
 <div>
 
-    <table width="99%" align="center" style="text-align: center" class="menu" >
+    <table width="99%" align="center" style="text-align: center" class="menu">
 
         <tr >
-            <td><a  href="/"> <input type="button" class="table1" align="center" style="font-size:40pt" value="main"> </a></td>
-            <td><a href="/gui/route/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="routes"> </a></td>
-            <td><a href="/gui/chauffeur/all"> <input type="button" class="table1" align="center" style="font-size:40pt" value="chauffeurs"> </a></td>
-            <td><a href="/info.html"> <input type="button" class="table1" align="center" style="font-size:40pt" value="info"> </a></td>
-
+            <td><a href="/"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="main"> </a></td>
+            <td><a href="/gui/route/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="routes"> </a></td>
+            <td><a href="/gui/chauffeur/all"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="chauffeurs"> </a></td>
+            <td><a href="/info.html"> <input type="button"
+                   class="table1" align="center" style="font-size:40pt"
+                   value="info"> </a></td>
         </tr></table>
 
 </div>
@@ -91,12 +98,14 @@
 <h1 style="font-size:60pt"> Table of finished work </h1>
 
 <div>
-    <td><a href="/gui/finishedwork/create" > <input type="button" class="createButton" value="Create"></a> </td>
+    <td><a href="/gui/finishedwork/create" > <input type="button"
+           class="createButton" value="Create"></a> </td>
 
     <br>
     <br>
 
-    <table class="table2"  width="90%" align="center" style="text-align: center" border="2px solid #00008b">
+    <table class="table2"  width="90%" align="center"
+           style="text-align: center" border="2px solid #00008b">
         <tr>
             <th>ID</th>
             <th>Route</th>
@@ -115,35 +124,16 @@
                 <td>${finishedwork.route.name}</td>
                 <td>${finishedwork.chauffeur.getSurname()}</td>
                 <td>${finishedwork.coChauffeur.getSurname()}</td>
-
-
-
-<#--                <td>${finishedwork.coChauffeur.getSurname().compareToIgnoreCase(null)}</td>-->
-<#--                <td #if finishedwork.chauffeur.getSurname() != null??>${finishedwork.coChauffeur.getSurname()}><#else>null</#if></td>-->
-
-<#--                <td><#if finishedwork.chauffeur.getSurname(null)>null<#else>${finishedwork.coChauffeur.getSurname()}</#if></td>-->
-
-<#--                <td  finishedwork.coChauffeur.surname!=null >${finishedwork.coChauffeur.surname }</td>-->
-<#--                <td  finishedwork.coChauffeur.surname=null > $null </td>-->
-
-<#--                <#if myOptionalVar??>when-present<#else>when-missing</#if>-->
-
-
-<#--                <td>-->
-<#--                    {}-->
-<#--                    ${ % if finishedwork.coChauffeur.surname != null % finishedwork.coChauffeur.surname}-->
-<#--                    {%if finishedwork.coChauffeur == null %} null-->
-<#--                </td>-->
-
-
-
                 <td>${finishedwork.departureDate}</td>
                 <td>${finishedwork.returnDate}</td>
                 <td>${finishedwork.fee}</td>
 
-                <td > <a href="/gui/finishedwork/update/${finishedwork.id}"> <input type="button" align="center" class="updateButton" value="Edit"> </a> </td>
-                <td > <a href="/gui/finishedwork/delete/${finishedwork.id}"> <input type="button" align="center" class="deleteButton" value="Del"> </a> </td>
-
+                <td> <a href="/gui/finishedwork/update/${finishedwork.id}">
+                        <input type="button" align="center" class="updateButton"
+                               value="Edit"></a></td>
+                <td> <a href="/gui/finishedwork/delete/${finishedwork.id}">
+                        <input type="button" align="center" class="deleteButton"
+                               value="Del"></a></td>
             </tr>
         </#list>
 
@@ -154,10 +144,8 @@
 <br>
 <br>
 
-
-<div class="footer"> © Copyright Yurii Selebynka 2021 <br> All rights reserved <br> Details - in about section</div>
-
-
+<div class="footer"> © Copyright 2021 Yurii Selebynka (1996)
+    <br> All rights reserved <br> Details - in info section</div>
 
 </body>
 </html>

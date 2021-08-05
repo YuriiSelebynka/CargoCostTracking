@@ -1,4 +1,5 @@
 package edu.yurii.service.route.interfaces;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -13,7 +14,6 @@ import java.util.List;
 
 public interface IRouteService {
 
-    // CRUD
     Route create(Route route);
     Route get(String id);
     Route update(Route route);

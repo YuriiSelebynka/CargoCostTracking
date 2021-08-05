@@ -1,4 +1,5 @@
 package edu.yurii.form;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -19,7 +20,4 @@ public class RouteCreateForm {
     private double distance;
     private double daysInRoute;
     private double payment;
-
-//    public RouteCreateForm() {
-//    }
 }

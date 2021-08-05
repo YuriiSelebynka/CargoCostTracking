@@ -1,4 +1,5 @@
 package edu.yurii.service.chauffeur.impls;
+
 /*
   @author   Yurii Selebynka
   @project   CargoCostTracking
@@ -9,7 +10,6 @@ package edu.yurii.service.chauffeur.impls;
 
 import edu.yurii.model.Chauffeur;
 import edu.yurii.repository.ChauffeurMongoRepository;
-//import edu.yurii.repository.FakeChauffeurRepository;
 import edu.yurii.repository.FakeRepository;
 import edu.yurii.service.chauffeur.interfaces.IChauffeurService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,6 @@ public class ChauffeurServiceImpl implements IChauffeurService {
 
     @Override
     public Chauffeur update(Chauffeur chauffeur) {
-        //Chauffeur chauffeurToUpdate = this.get(chauffeur.getId());
         return chauffeurMongoRepository.save(chauffeur);
     }
 
@@ -54,6 +53,7 @@ public class ChauffeurServiceImpl implements IChauffeurService {
     public Chauffeur delete(String id) {
         Chauffeur chauffeur = this.get(id);
         chauffeurMongoRepository.deleteById(chauffeur.getId());
+
         return chauffeur;
     }
 
